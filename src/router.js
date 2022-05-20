@@ -15,6 +15,10 @@ class Router{
         this.WETH = await this.router.WETH();
     }
 
+    async getFactory(){
+        return await this.router.factory();
+    }
+
     async getAmountsOut(amount, tokens){
         try{
             let price = await this.router.getAmountsOut(amount, tokens);
@@ -44,7 +48,10 @@ class Router{
             
 
         }catch(error){
-            console.log("Token not supported");
+            return {
+                "pair": `${token.symbol} - WBNB`,
+                "basePrice": 0
+            }      
         }
     }
 
