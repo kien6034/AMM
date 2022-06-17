@@ -1,14 +1,19 @@
 const { ethers } = require("ethers");
-const abi = require("../data/abi/router.json")
+const abi = require("../../data/abi/router.json")
 
-const MULTIPLIER = 10000000
+const MULTIPLIER = 10000000;
+const WETH = "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c";
 
 class Router{
-    constructor(routerAddress, wallet, baseCurrency) {
+    constructor(routerAddress, wallet, baseCurrency=WETH) {
         this.wallet = wallet;
         
         this.router = new ethers.Contract(routerAddress, abi, wallet);
         this.WETH = baseCurrency;
+    }
+
+    getRouter(){
+        return this.router;
     }
 
     async init(){

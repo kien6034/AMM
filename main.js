@@ -6,7 +6,7 @@ const tokenAddresses = require("./data/addresses/tokens.json")
 
 const Pair = require("./src/pair");
 const Router = require("./src/router");
-const Factory = require("./src/factory");
+const Factory = require("./src/connecters/factory");
 
 const AMOUNT= ethers.utils.parseEther("1");
 const WETH = "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c";

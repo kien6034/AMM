@@ -1,3 +1,4 @@
 node_modules
 .pancake-smart-contracts
 .vscode
+.env
